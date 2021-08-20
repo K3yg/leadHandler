@@ -1,8 +1,6 @@
 from config import *
 from model import PessoaFisica, PessoaJuridica
 
-import csv
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -17,6 +15,7 @@ def index():
 
 @app.route('/export')
 def export():
+
     clientes_fisico = PessoaFisica.query.all()
     clientes_juridico = PessoaJuridica.query.all()
 
@@ -34,10 +33,10 @@ def export():
         for nome in nomes:
             nome_count += 1
             writer.writerow({'first_name': nome, 'last_name': 'santos'})
-        
 
 
-
+    path =  os.path.dirname(os.path.abspath(__file__))    
+    print(path)
 
     return render_template('index.html', clientes_fisico=clientes_fisico, 
     clientes_juridico=clientes_juridico)

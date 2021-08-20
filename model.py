@@ -61,8 +61,6 @@ class PessoaJuridica(db.Model):
     aceitar_termos = db.Column(db.String(100), default = 'Sim')
 
 
-
-
 if __name__ == '__main__':
     if os.path.exists(arquivobd):
         os.remove(arquivobd)
