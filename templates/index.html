@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <h1>Tabela de arquivos</h1>
 
     <table class="center">
@@ -20,21 +21,8 @@
 
         </tr>
 
-        {% for file in files %}
-
-        <tbody id="myTable">
-            <tr>
-                <td>{{ file.id }}</td>
-                <td>{{ file.name }}</td>
-                <td>{{ file.formato }}</td>
-                <td>
-                    <a href="/download/{{ file.id }}">Baixar</a>
-                    <a href="/delete/{{ file.id }}">Deletar</a>
-
-                </td>
-            </tr>
-
-        {% endfor %}
     </table>
+
+    
 </body>
 </html>
