@@ -1,28 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
     <title>Document</title>
+
+    <style>
+        :root {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>Pessoa física</h1>
+    <div id="tabela-fisica">
+        <table class="table table-dark table-sm table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Sobre</th>
+                    <th scope="col">Desejo</th>
+                    <th scope="col">Operadora</th>
 
-    <h1>Tabela de arquivos</h1>
+                    <th scope="col">Fatura</th>
+                </tr>
+            </thead>
 
-    <table class="center">
-        <thead>
-            
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Formato</th>
-            <th scope="col">Ações</th>
+            {% for cliente_fisico in clientes_fisico  %}
+                <tbody>
+                    <tr>
+                        <td>{{ cliente_fisico.id }}</td>
+                        <td>{{ cliente_fisico.nome }}</td>
+                        <td>{{ cliente_fisico.telefone }}</td>
+                        <td>{{ cliente_fisico.cidade }}</td>
+                        <td>{{ cliente_fisico.analise_sobre }}</td>
+                        <td>{{ cliente_fisico.desejo }}</td>
+                        <td>{{ cliente_fisico.operadora }}</td>
+                        <td>{{ cliente_fisico.fatura }}</td>
+                </tbody>
+            {% endfor %}
+        </table>
 
-        </tr>
+    </div>
 
-    </table>
 
-    
+
+
+    <h1>Pessoa jurídica</h1>
+    <div id="tabela-juridica">
+        <table class="table table-dark table-sm table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Setor</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Sobre</th>
+                    <th scope="col">Desejo</th>
+                    <th scope="col">Operadora</th>
+
+                    <th scope="col">Fatura</th>
+                </tr>
+            </thead>
+
+            {% for cliente_juridico in clientes_juridico  %}
+            <tbody>
+                <tr>
+                    <td>{{ cliente_juridico.id }}</td>
+                    <td>{{ cliente_juridico.nome }}</td>
+                    <td>{{ cliente_juridico.nome_empresa }}</td>
+                    <td>{{ cliente_juridico.setor }}</td>
+                    <td>{{ cliente_juridico.email }}</td>
+                    <td>{{ cliente_juridico.telefone }}</td>
+                    <td>{{ cliente_juridico.cidade }}</td>
+                    <td>{{ cliente_juridico.analise_sobre }}</td>
+                    <td>{{ cliente_juridico.desejo }}</td>
+                    <td>{{ cliente_juridico.operadora }}</td>
+                    <td>{{ cliente_juridico.fatura }}</td>
+            </tbody>
+            {% endfor %}
+        </table>
+
+
+    </div>
+
+
 </body>
+
 </html>
