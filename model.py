@@ -66,14 +66,16 @@ class PessoaJuridica(db.Model):
 if __name__ == '__main__':
     if os.path.exists(arquivobd):
         os.remove(arquivobd)
+        db.create_all()
     else:
         db.create_all()
-        x = PessoaJuridica('Jonas', 'Fey', 'Comercial', 'jonas@gmail.com', '11 99999-9999', 'São Paulo', 'Internet', 'Aumentar', 'Vivo', 'Sim')
-        y = PessoaFisica('Claudio', '11 99999-9999', 'Rio de Janeiro', 'Móvel', 'Aumentar dados', 'Claro', 'Sim')
+        
+    x = PessoaJuridica('Jonas', 'Fey', 'Comercial', 'jonas@gmail.com', '11 99999-9999', 'São Paulo', 'Internet', 'Aumentar', 'Vivo', 'Sim')
+    y = PessoaFisica('Claudio', '11 99999-9999', 'Rio de Janeiro', 'Móvel', 'Aumentar dados', 'Claro', 'Sim')
 
-        db.session.add(x)
-        db.session.add(y)
-        db.session.commit()
+    db.session.add(x)
+    db.session.add(y)
+    db.session.commit()
 
 
 
