@@ -44,22 +44,24 @@
                 </tr>
             </thead>
 
-            {% for cliente_fisico in clientes_fisico  %}
+            {% for lead in lead_f  %}
                 <tbody>
                     <tr>
-                        <td>{{ cliente_fisico.id }}</td>
-                        <td>{{ cliente_fisico.nome }}</td>
-                        <td>{{ cliente_fisico.telefone }}</td>
-                        <td>{{ cliente_fisico.cidade }}</td>
-                        <td>{{ cliente_fisico.analise_sobre }}</td>
-                        <td>{{ cliente_fisico.desejo }}</td>
-                        <td>{{ cliente_fisico.operadora }}</td>
-                        <td>{{ cliente_fisico.fatura }}</td>
+                        <td>{{ lead.id }}</td>
+                        <td>{{ lead.nome }}</td>
+                        <td>{{ lead.telefone }}</td>
+                        <td>{{ lead.cidade }}</td>
+                        <td>{{ lead.analise_sobre }}</td>
+                        <td>{{ lead.desejo }}</td>
+                        <td>{{ lead.operadora }}</td>
+                        <td>{{ lead.fatura }}</td>
                 </tbody>
             {% endfor %}
         </table>
 
     </div>
+
+    <a href="/export_f"><button class="btn-primary btn">Baixar tabela</button></a>
 
 
 
@@ -84,20 +86,20 @@
                 </tr>
             </thead>
 
-            {% for cliente_juridico in clientes_juridico  %}
+            {% for lead in lead_j  %}
             <tbody>
                 <tr>
-                    <td>{{ cliente_juridico.id }}</td>
-                    <td>{{ cliente_juridico.nome }}</td>
-                    <td>{{ cliente_juridico.nome_empresa }}</td>
-                    <td>{{ cliente_juridico.setor }}</td>
-                    <td>{{ cliente_juridico.email }}</td>
-                    <td>{{ cliente_juridico.telefone }}</td>
-                    <td>{{ cliente_juridico.cidade }}</td>
-                    <td>{{ cliente_juridico.analise_sobre }}</td>
-                    <td>{{ cliente_juridico.desejo }}</td>
-                    <td>{{ cliente_juridico.operadora }}</td>
-                    <td>{{ cliente_juridico.fatura }}</td>
+                    <td>{{ lead.id }}</td>
+                    <td>{{ lead.nome }}</td>
+                    <td>{{ lead.setor }}</td>
+                    <td>{{ lead.nome_empresa }}</td>
+                    <td>{{ lead.email }}</td>
+                    <td>{{ lead.telefone }}</td>
+                    <td>{{ lead.cidade }}</td>
+                    <td>{{ lead.analise_sobre }}</td>
+                    <td>{{ lead.desejo }}</td>
+                    <td>{{ lead.operadora }}</td>
+                    <td>{{ lead.fatura }}</td>
             </tbody>
             {% endfor %}
         </table>
@@ -105,7 +107,7 @@
 
     </div>
 
-    <a href="/export"><button class="btn-primary btn">Baixar tabelas</button></a>
+    <a href="/export_j"><button class="btn-primary btn">Baixar tabela</button></a>
 
 </body>
 

@@ -1,43 +1,24 @@
+from json import encoder
+from flask.json import dumps, jsonify
 from config import *
 from model import PessoaFisica, PessoaJuridica
+import flask_excel
+import pyexcel_xlsx
 
+flask_excel.init_excel(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    clientes_fisico = PessoaFisica.query.all()
-    clientes_juridico = PessoaJuridica.query.all()
+    lead_f = PessoaFisica.query.all()
+    lead_j = PessoaJuridica.query.all()
 
-    print(type(clientes_fisico))
+    return render_template('index.html', lead_f=lead_f, 
+    lead_j=lead_j)
+    
+@app.route("/export_f", methods=['GET'])
+def export_f():
+        return flask_excel.make_response_from_tables(db.session, [PessoaFisica], "xlsx", file_name="leads_fisico")
 
-    return render_template('index.html', clientes_fisico=clientes_fisico, 
-    clientes_juridico=clientes_juridico)
-
-
-@app.route('/export')
-def export():
-
-    clientes_fisico = PessoaFisica.query.all()
-    clientes_juridico = PessoaJuridica.query.all()
-
-    clientes = clientes_fisico + clientes_juridico
-
-    nomes = ['claudio', 'jonas', 'valter']
-    nome_count = 0
-
-    with open('names.csv', 'w', newline='') as csvfile:
-        fieldnames = ['first_name', 'last_name']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=';')
-
-        writer.writeheader()
-
-        for nome in nomes:
-            nome_count += 1
-            writer.writerow({'first_name': nome, 'last_name': 'santos'})
-
-
-    path =  os.path.dirname(os.path.abspath(__file__))    
-    print(path)
-
-    return render_template('index.html', clientes_fisico=clientes_fisico, 
-    clientes_juridico=clientes_juridico)
-
+@app.route("/export_j", methods=['GET'])
+def export_j():
+        return flask_excel.make_response_from_tables(db.session, [PessoaJuridica], "xlsx", file_name="leads_juridico")
