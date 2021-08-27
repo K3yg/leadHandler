@@ -51,10 +51,11 @@
                         <td>{{ lead.nome }}</td>
                         <td>{{ lead.telefone }}</td>
                         <td>{{ lead.cidade }}</td>
-                        <td>{{ lead.analise_sobre }}</td>
-                        <td>{{ lead.desejo }}</td>
                         <td>{{ lead.operadora }}</td>
-                        <td>{{ lead.fatura }}</td>
+                        <td>{{ lead.custo }}</td>
+                        <td>{{ lead.internet }}</td>
+                        <td>{{ lead.fixo }}</td>
+                        <td>{{ lead.movel }}</td>
                 </tbody>
             {% endfor %}
         </table>
@@ -78,10 +79,11 @@
                     <th scope="col">Email</th>
                     <th scope="col">Telefone</th>
                     <th scope="col">Cidade</th>
-                    <th scope="col">Sobre</th>
-                    <th scope="col">Desejo</th>
                     <th scope="col">Operadora</th>
-
+                    <th scope="col">Custo</th>
+                    <th scope="col">Internet</th>
+                    <th scope="col">Fixo</th>
+                    <th scope="col">Móvel</th>
                     <th scope="col">Fatura</th>
                 </tr>
             </thead>
@@ -91,15 +93,16 @@
                 <tr>
                     <td>{{ lead.id }}</td>
                     <td>{{ lead.nome }}</td>
-                    <td>{{ lead.setor }}</td>
                     <td>{{ lead.nome_empresa }}</td>
+                    <td>{{ lead.setor }}</td>
                     <td>{{ lead.email }}</td>
                     <td>{{ lead.telefone }}</td>
                     <td>{{ lead.cidade }}</td>
-                    <td>{{ lead.analise_sobre }}</td>
-                    <td>{{ lead.desejo }}</td>
                     <td>{{ lead.operadora }}</td>
-                    <td>{{ lead.fatura }}</td>
+                    <td>{{ lead.custo }}</td>
+                    <td>{{ lead.internet }}</td>
+                    <td>{{ lead.fixo }}</td>
+                    <td>{{ lead.movel }}</td>
             </tbody>
             {% endfor %}
         </table>
