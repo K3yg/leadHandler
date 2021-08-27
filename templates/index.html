@@ -27,28 +27,79 @@
 </head>
 
 <body>
-    <h1>Pessoa física</h1>
-    <div id="tabela-fisica">
-        <table class="table table-dark table-sm table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col">Sobre</th>
-                    <th scope="col">Desejo</th>
-                    <th scope="col">Operadora</th>
+    <div class="container">
+        <h1 class="text-center">Pessoa física</h1><br>
+        <div id="tabela-fisica">
+            <table class="table table-dark table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Operadora</th>
+                        <th scope="col">Custo</th>
+                        <th scope="col">Internet</th>
+                        <th scope="col">Fixo</th>
+                        <th scope="col">Móvel</th>
+                        <th scope="col">Fatura</th>
 
-                    <th scope="col">Fatura</th>
-                </tr>
-            </thead>
+                    </tr>
+                </thead>
 
-            {% for lead in lead_f  %}
+                {% for lead in lead_f  %}
+                    <tbody>
+                        <tr>
+                            <td>{{ lead.id }}</td>
+                            <td>{{ lead.nome }}</td>
+                            <td>{{ lead.telefone }}</td>
+                            <td>{{ lead.cidade }}</td>
+                            <td>{{ lead.operadora }}</td>
+                            <td>{{ lead.custo }}</td>
+                            <td>{{ lead.internet }}</td>
+                            <td>{{ lead.fixo }}</td>
+                            <td>{{ lead.movel }}</td>
+                            <td>{{ lead.fatura }}</td>
+                    </tbody>
+                {% endfor %}
+            </table>
+
+        </div>
+
+        <a href="/export_f"><button class="btn-primary btn">Baixar tabela</button></a>
+
+
+
+
+        <h1 class="text-center">Pessoa jurídica</h1><br>
+        <div id="tabela-juridica">
+            <table class="table table-dark table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">Setor</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Operadora</th>
+                        <th scope="col">Custo</th>
+                        <th scope="col">Internet</th>
+                        <th scope="col">Fixo</th>
+                        <th scope="col">Móvel</th>
+                        <th scope="col">Fatura</th>
+                    </tr>
+                </thead>
+
+                {% for lead in lead_j  %}
                 <tbody>
                     <tr>
                         <td>{{ lead.id }}</td>
                         <td>{{ lead.nome }}</td>
+                        <td>{{ lead.nome_empresa }}</td>
+                        <td>{{ lead.setor }}</td>
+                        <td>{{ lead.email }}</td>
                         <td>{{ lead.telefone }}</td>
                         <td>{{ lead.cidade }}</td>
                         <td>{{ lead.operadora }}</td>
@@ -56,62 +107,17 @@
                         <td>{{ lead.internet }}</td>
                         <td>{{ lead.fixo }}</td>
                         <td>{{ lead.movel }}</td>
+                        <td>{{ lead.fatura }}</td>
+
                 </tbody>
-            {% endfor %}
-        </table>
+                {% endfor %}
+            </table>
 
+
+        </div>
+
+        <a href="/export_j"><button class="btn-primary btn">Baixar tabela</button></a>
     </div>
-
-    <a href="/export_f"><button class="btn-primary btn">Baixar tabela</button></a>
-
-
-
-
-    <h1>Pessoa jurídica</h1>
-    <div id="tabela-juridica">
-        <table class="table table-dark table-sm table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Empresa</th>
-                    <th scope="col">Setor</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col">Operadora</th>
-                    <th scope="col">Custo</th>
-                    <th scope="col">Internet</th>
-                    <th scope="col">Fixo</th>
-                    <th scope="col">Móvel</th>
-                    <th scope="col">Fatura</th>
-                </tr>
-            </thead>
-
-            {% for lead in lead_j  %}
-            <tbody>
-                <tr>
-                    <td>{{ lead.id }}</td>
-                    <td>{{ lead.nome }}</td>
-                    <td>{{ lead.nome_empresa }}</td>
-                    <td>{{ lead.setor }}</td>
-                    <td>{{ lead.email }}</td>
-                    <td>{{ lead.telefone }}</td>
-                    <td>{{ lead.cidade }}</td>
-                    <td>{{ lead.operadora }}</td>
-                    <td>{{ lead.custo }}</td>
-                    <td>{{ lead.internet }}</td>
-                    <td>{{ lead.fixo }}</td>
-                    <td>{{ lead.movel }}</td>
-            </tbody>
-            {% endfor %}
-        </table>
-
-
-    </div>
-
-    <a href="/export_j"><button class="btn-primary btn">Baixar tabela</button></a>
-
 </body>
 
 </html>

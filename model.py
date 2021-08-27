@@ -49,7 +49,7 @@ if __name__ == '__main__':
     y = PessoaFisica(nome='Cleitin', telefone='11 99999-9999', cidade='São Paulo', operadora='Vivo', custo=220.00)
 
     db.session.add(x)
-    #db.session.add(y)
+    db.session.add(y)
     db.session.commit()
 
 
