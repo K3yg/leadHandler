@@ -4,12 +4,8 @@ import os
 from werkzeug.wrappers import Response
 
 
-
-caminho = os.path.dirname(os.path.abspath(__file__))    
-arquivobd = os.path.join(caminho, "storage.db") 
-
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"+arquivobd 
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/Ireniza/Desktop/database-cet/database.db" 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)

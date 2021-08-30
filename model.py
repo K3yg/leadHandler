@@ -1,4 +1,3 @@
-from sqlalchemy.sql.elements import Null
 from config import *
 
 class PessoaFisica(db.Model):
@@ -39,12 +38,8 @@ class PessoaJuridica(db.Model):
 
 
 if __name__ == '__main__':
-    if os.path.exists(arquivobd):
-        os.remove(arquivobd)
-        db.create_all()
-    else:
-        db.create_all()
-        
+    db.create_all()
+    
     x = PessoaJuridica(nome='Jonas', nome_empresa='Fey', setor='Comercial', email='jonas@gmail.com', telefone='11 99999-9999', cidade='São Paulo', operadora='Vivo', custo=10.00)
     y = PessoaFisica(nome='Cleitin', telefone='11 99999-9999', cidade='São Paulo', operadora='Vivo', custo=220.00)
 
