@@ -17,14 +17,14 @@ def index():
         
 @app.route("/export_f", methods=['GET'])
 def export_f():
-        colunas = ['id', 'nome']
-        return flask_excel.make_response_from_query_sets(PessoaFisica.query.all(), colunas, "xlsx")
+        colunas = ['nome', 'telefone', 'cidade', 'operadora', 'custo', 'internet', 'fixo', 'movel', 'data_cadastro']
+        return flask_excel.make_response_from_query_sets(PessoaFisica.query.all(), colunas, "xlsx", file_name="leads_pf")
         #return flask_excel.make_response_from_a_table(db.session, PessoaFisica, "xlsx", file_name="leads_fisico")
 
 @app.route("/export_j", methods=['GET'])
 def export_j():
-        colunas = ['id', 'nome']
-        return flask_excel.make_response_from_query_sets(PessoaFisica.query.all(), colunas, "xlsx")
+        colunas = ['nome', 'nome_empresa', 'setor', 'email', 'telefone', 'cidade', 'operadora', 'custo', 'internet', 'fixo', 'movel', 'linhas_moveis', 'data_cadastro']
+        return flask_excel.make_response_from_query_sets(PessoaJuridica.query.all(), colunas, "xlsx",file_name="leads_pj")
         #return flask_excel.make_response_from_a_table(db.session, PessoaJuridica, "xlsx", file_name="leads_juridico")
 
 @app.route('/download_f/<int:id>')
