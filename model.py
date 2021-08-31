@@ -1,5 +1,9 @@
 from config import *
 
+def pegarDia():
+    hoje = datetime.datetime.now()
+    return hoje.day
+
 class PessoaFisica(db.Model):
     __tablename__ = 'pessoa_fisica'
 
@@ -9,12 +13,14 @@ class PessoaFisica(db.Model):
 
     cidade = db.Column(db.String(100))
     operadora = db.Column(db.String(100))
-    custo = db.Column(db.Float)
+    custo = db.Column(db.String(100))
     internet = db.Column(db.String(100), nullable = True)
     fixo = db.Column(db.String(100), nullable = True)
     movel = db.Column(db.String(100), nullable = True)
 
-    #fatura = db.Column(db.LargeBinary, nullable = True)
+    fatura = db.Column(db.LargeBinary, nullable = True)
+
+    data_cadastro = db.Column(db.String(100))
 
 
 class PessoaJuridica(db.Model):
@@ -30,23 +36,15 @@ class PessoaJuridica(db.Model):
 
     cidade = db.Column(db.String(100))
     operadora = db.Column(db.String(100))
-    custo = db.Column(db.Float)
+    custo = db.Column(db.String(100))
     internet = db.Column(db.String(100), nullable = True)
     fixo = db.Column(db.String(100), nullable = True)
     movel = db.Column(db.String(100), nullable = True)
-    #fatura = db.Column(db.LargeBinary, nullable = True)
+    linhas_moveis = db.Column(db.String(100), nullable = True)
 
+    fatura = db.Column(db.LargeBinary, nullable = True)
+
+    data_cadastro = db.Column(db.String(100))
 
 if __name__ == '__main__':
     db.create_all()
-    
-    x = PessoaJuridica(nome='Jonas', nome_empresa='Fey', setor='Comercial', email='jonas@gmail.com', telefone='11 99999-9999', cidade='São Paulo', operadora='Vivo', custo=10.00)
-    y = PessoaFisica(nome='Cleitin', telefone='11 99999-9999', cidade='São Paulo', operadora='Vivo', custo=220.00)
-
-    db.session.add(x)
-    db.session.add(y)
-    db.session.commit()
-
-
-
-    

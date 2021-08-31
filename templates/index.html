@@ -42,6 +42,7 @@
                         <th scope="col">Internet</th>
                         <th scope="col">Fixo</th>
                         <th scope="col">Móvel</th>
+                        <th scope="col">Dia de cadastro</th>
                         <th scope="col">Fatura</th>
 
                     </tr>
@@ -59,7 +60,8 @@
                             <td>{{ lead.internet }}</td>
                             <td>{{ lead.fixo }}</td>
                             <td>{{ lead.movel }}</td>
-                            <td>{{ lead.fatura }}</td>
+                            <td>{{ lead.data_cadastro }}</td>
+                            <td> <a href="/download_f/{{lead.id}}"> <img src='./static/img/download.png' style="height: 30px; width: 30px;"> </a> </td>
                     </tbody>
                 {% endfor %}
             </table>
@@ -107,7 +109,7 @@
                         <td>{{ lead.internet }}</td>
                         <td>{{ lead.fixo }}</td>
                         <td>{{ lead.movel }}</td>
-                        <td>{{ lead.fatura }}</td>
+                        <td> <a href="/download_j/{{lead.id}}"> <img src='./static/img/download.png' style="height: 30px; width: 30px;"> </a> </td>
 
                 </tbody>
                 {% endfor %}
