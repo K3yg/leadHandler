@@ -12,6 +12,12 @@ def index():
         lead_f = PessoaFisica.query.all()
         lead_j = PessoaJuridica.query.all()
 
+
+        for i in lead_f:
+                print(i.fatura)
+                print(type(i.fatura))
+
+
         return render_template('index.html', lead_f=lead_f, 
         lead_j=lead_j)
         
