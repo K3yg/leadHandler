@@ -46,5 +46,17 @@ class PessoaJuridica(db.Model):
 
     data_cadastro = db.Column(db.String(100))
 
+
+class User(db.Model, UserMixin):
+    __tablename__ = 'users'
+    __bind_key__= 'users'
+    id = db.Column(db.Integer, primary_key=True)
+
+    login = db.Column(db.String(100))
+    senha = db.Column(db.String(100))
+
 if __name__ == '__main__':
-    db.create_all()
+    usuario = User(login='mikaella@grupogiovanella.com.br', senha='~*c[(4CG&~tQK5~J')
+    db.session.add(usuario)
+    db.session.commit()
+    db.create_all(bind='users')
