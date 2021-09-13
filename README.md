@@ -1,2 +1,2 @@
-# lead-handler
+# Lead handler
 Plataforma para cuidar dos leads.
